@@ -1,0 +1,19 @@
+.b1 {
+    display: inline-block;
+    position: relative;
+    margin: 1%;
+    float: none;
+    width: auto;
+    height: auto;
+    background-color: lightgrey;
+}
+
+.b2 {
+    display: inline-block;
+    position: relative;
+    margin: 1%;
+    float: right;
+    width: auto;
+    height: auto;
+    background-color: lightgrey;
+}
