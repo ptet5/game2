@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="interface.css" />
+	</head>
+	<body>
+		<button onclick="stoneClick(1)">Stone+1</button>
+		<br />
+		Stone: <span id="stone">0</span>
+		<br />
+        Mining: <span id="mining">0</span> per second
+        <br />
+        <button onclick="woodClick(1)">Wood+1</button>
+        <br />
+        
+        Wood: <span id="wood">0</span>
+        <br />
+        Chopping: <span id="chopping">0</span> per second
+        <br />
+        <button onclick="metalClick(1)">Metal+1</button>
+        <br />
+        
+        Metal: <span id="metal">0</span>
+        <br />
+        Smelting: <span id="smelting">0</span> per second
+        <br />
+        <br />
+		
+        <button onclick="buyMiner()">Miner</button>
+		<br />
+		Miner: <span id="Miner">0</span>
+		<br />
+		Miner Cost: <span id="minerCost">10</span>
+		<script type="text/javascript" src="main.js"></script>
+        <br />
+        
+        <button onclick="buyChopper()">Chopper</button>
+        <br />
+        Chopper: <span id="chopper">0</span>
+        <br />
+        Chopper Cost: <span id="chopperCost">10</span>
+        <br />
+        
+        <button onclick="buySmelter()">Smelter</button>
+        <br />
+        Smelter: <span id="smelter">0</span>
+        <br />
+        Smelter cost: <span id="smelterCost">10</span>
+        <br />
+        <br />
+
+        Your army contains <spam id="army">0</spam> warriors. <br/>
+
+        
+        
+        Housing:<br/>
+        Small houses (you have <span id="smallhouse">0</span>) can hold 1 member of your army.
+        <br/>
+        Each one currently costs <span id="smallhouseCost">150</span> metal.
+        <br/>
+        <button onclick="buySmallhouse()">Small House </button>
+        <br/>
+
+        Larger houses (you have <span id="reghouse">0</span>) can hold 5 members of your army.
+        <br />
+        Each one currently costs <span id="reghouseCost">400</span> metal.
+        <br/>
+        <button onclick="buyReghouse()">Larger house</button>
+        <br/>
+
+        Apartments (you have <span id="apartment">0</span>) can hold 100 members of your army! Wow!<br/>
+        Each one costs <span id="apartmentCost">1000</span> wood and metal (each) <br/>
+        <button onclick="buyApartment()">Apartment</button> <br/>
+
+        
+	</body>
+</html>
+
