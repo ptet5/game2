@@ -9,12 +9,14 @@ var miner = 0;
 
 function buyMiner(){
     var minerCost = Math.floor(10 * Math.pow(1.1,miner));     //works out the cost of this cursor
-    if(stone >= minerCost){                                   //checks that the player can afford the cursor
+    if(stone >= minerCost){                      //checks that the player can afford the cursor
         miner = miner + 1;                                   //increases number of miner
     	stone = stone - minerCost;                          //removes the cookies spent
+        army = army - 1;
         document.getElementById('Miner').innerHTML = miner;  //updates the number of miner for the user
         document.getElementById('stone').innerHTML = stone;  //updates the number of cookies for the user
         document.getElementById('mining').innerHTML = miner;
+
     };
     var nextCost = Math.floor(10 * Math.pow(1.1,miner));       //works out the cost of the next cursor
     document.getElementById('minerCost').innerHTML = nextCost;  //updates the cursor cost for the user
@@ -60,7 +62,7 @@ window.setInterval(function(){
 
 
 
-var metal = 1000;
+var metal = 1000000;
 
 function metalClick(number){
     metal = metal + number;
@@ -111,7 +113,7 @@ function buySmallcottage(){
         document.getElementById('metal').innerHTML = metal;  //updates the number of cookies for the user
         document.getElementById('army').innerHTML = smallcottage;
     };
-    var nextCost = Math.floor(150 * Math.pow(1.1,smallcottage));       //works out the cost of the next cursor
+    var nextCost = Math.floor(150 * Math.pow(1.1,(smallcottage + (10 * village))));       //works out the cost of the next cursor
     document.getElementById('smallcottageCost').innerHTML = nextCost;  //updates the cursor cost for the user
     var army = Math.floor((15 * village) + (100 * apartment) + (5 * regcottage) + smallcottage)
     document.getElementById('army').innerHTML = army;
@@ -167,3 +169,19 @@ function buyVillage(){
     var army = Math.floor((15 * village) + (100 * apartment) + (5 * regcottage) + smallcottage)
     document.getElementById('army').innerHTML = army;
 };
+
+if (Modernizr.localstorage) {
+    // window.localStorage is available!
+  } else {
+    // no native support for HTML5 storage :(
+    // maybe try dojox.storage or a third-party solution
+  }
+
+
+
+//future ideas:
+//Include cities
+//Weapons + armor
+//Strenghth/attack bar
+//some sort of battle element
+//space
