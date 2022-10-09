@@ -96,41 +96,41 @@ window.setInterval(function(){
 
 var army = 0;
 
-var smallhouse = 0;
+var smallcottage = 0;
 
 
 
 
 
-function buySmallhouse(){
-    var smallhouseCost = Math.floor(150 * Math.pow(1.1,smallhouse));     //works out the cost of this cursor
-    if(metal >= smallhouseCost){                                   //checks that the player can afford the cursor
-        smallhouse = smallhouse + 1;                                   //increases number of miner
-    	metal = metal - smallhouseCost;                          //removes the cookies spent
-        document.getElementById('smallhouse').innerHTML = smallhouse;  //updates the number of miner for the user
+function buySmallcottage(){
+    var smallcottageCost = Math.floor(150 * Math.pow(1.1,smallcottage));     //works out the cost of this cursor
+    if(metal >= smallcottageCost){                                   //checks that the player can afford the cursor
+        smallcottage = smallcottage + 1;                                   //increases number of miner
+    	metal = metal - smallcottageCost;                          //removes the cookies spent
+        document.getElementById('smallcottage').innerHTML = smallcottage;  //updates the number of miner for the user
         document.getElementById('metal').innerHTML = metal;  //updates the number of cookies for the user
-        document.getElementById('army').innerHTML = smallhouse;
+        document.getElementById('army').innerHTML = smallcottage;
     };
-    var nextCost = Math.floor(150 * Math.pow(1.1,smallhouse));       //works out the cost of the next cursor
-    document.getElementById('smallhouseCost').innerHTML = nextCost;  //updates the cursor cost for the user
-    var army = Math.floor((100 * apartment) + (5 * reghouse) + smallhouse)
+    var nextCost = Math.floor(150 * Math.pow(1.1,smallcottage));       //works out the cost of the next cursor
+    document.getElementById('smallcottageCost').innerHTML = nextCost;  //updates the cursor cost for the user
+    var army = Math.floor((15 * village) + (100 * apartment) + (5 * regcottage) + smallcottage)
     document.getElementById('army').innerHTML = army;
 
 };
 
-var reghouse = 0;
+var regcottage = 0;
 
-function buyReghouse(){
-    var reghouseCost = Math.floor(400 * Math.pow(1.1,reghouse));     //works out the cost of this cursor
-    if(metal >= reghouseCost){                                   //checks that the player can afford the cursor
-        reghouse = reghouse + 1;                                   //increases number of miner
-    	metal = metal - reghouseCost;                          //removes the cookies spent
-        document.getElementById('reghouse').innerHTML = reghouse;  //updates the number of miner for the user
+function buyRegcottage(){
+    var regcottageCost = Math.floor(400 * Math.pow(1.1,regcottage));     //works out the cost of this cursor
+    if(metal >= regcottageCost){                                   //checks that the player can afford the cursor
+        regcottage = regcottage + 1;                                   //increases number of miner
+    	metal = metal - regcottageCost;                          //removes the cookies spent
+        document.getElementById('regcottage').innerHTML = regcottage;  //updates the number of miner for the user
         document.getElementById('metal').innerHTML = metal;  //updates the number of cookies for the user
     };
-    var nextCost = Math.floor(400 * Math.pow(1.1,reghouse));       //works out the cost of the next cursor
-    document.getElementById('reghouseCost').innerHTML = nextCost;  //updates the cursor cost for the user
-    var army = Math.floor((100 * apartment) + (5 * reghouse) + smallhouse)
+    var nextCost = Math.floor(400 * Math.pow(1.1,regcottage));       //works out the cost of the next cursor
+    document.getElementById('regcottageCost').innerHTML = nextCost;  //updates the cursor cost for the user
+    var army = Math.floor((15 * village) + (100 * apartment) + (5 * regcottage) + smallcottage)
     document.getElementById('army').innerHTML = army;
 };
 
@@ -148,6 +148,22 @@ function buyApartment(){
     };
     var nextCost = Math.floor(1000 * Math.pow(1.1,apartment));       //works out the cost of the next cursor
     document.getElementById('apartmentCost').innerHTML = nextCost;  //updates the cursor cost for the user
-    var army = Math.floor((100 * apartment) + (5 * reghouse) + smallhouse)
+    var army = Math.floor((15 * village) + (100 * apartment) + (5 * regcottage) + smallcottage)
+    document.getElementById('army').innerHTML = army;
+};
+
+var village = 0;
+
+function buyVillage(){
+    var villageCost = 10;     //works out the cost of this cursor
+    if(smallcottage >= villageCost){                                   //checks that the player can afford the cursor
+        village = village + 1;                                   //increases number of miner
+    	smallcottage = smallcottage - villageCost;                          //removes the cookies spent
+        document.getElementById('village').innerHTML = village;  //updates the number of miner for the user
+        document.getElementById('smallcottage').innerHTML = smallcottage;  //updates the number of cookies for the user
+    };
+    var nextCost = 10;       //works out the cost of the next cursor
+    document.getElementById('villageCost').innerHTML = nextCost;  //updates the cursor cost for the user
+    var army = Math.floor((15 * village) + (100 * apartment) + (5 * regcottage) + smallcottage)
     document.getElementById('army').innerHTML = army;
 };

@@ -2,13 +2,23 @@
     display: inline-block;
     position: relative;
     margin: 1%;
-    float: none;
+    float: left;
     width: auto;
     height: auto;
     background-color: lightgrey;
 }
 
 .b2 {
+    display: inline-block;
+    position: relative;
+    margin: 1%;
+    float: middle;
+    width: auto;
+    height: auto;
+    background-color: lightgrey;
+}
+
+.b3 {
     display: inline-block;
     position: relative;
     margin: 1%;
