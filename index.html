@@ -30,8 +30,12 @@
         <br />
         Smelting: <span id="smelting">0</span> per second
         <br />
-        <br />
-		
+        <button onclick="foodClick(1)">Food+1</button><br/>
+        Food: <span id="food">0</span>
+		<br/>
+        Farming: <span id="farming">0</span> per second
+        <br/>
+        <br/>
         <button onclick="buyMiner()">Miner</button>
 		<br />
 		Miner: <span id="Miner">0</span>
@@ -53,10 +57,12 @@
         <br />
         Smelter cost: <span id="smelterCost">10</span> metal
         <br />
+        
+        <button onclick="buyFarmer()">Farmer</button><br/>
+        Farmer: <span id="farmer">0</span><br/>
+        Farmer cost: <span id="farmerCost">10</span> food
         <br />
-
-        Your army contains <spam id="army">0</spam> warriors. <br/>
-
+        <br/>
         
         
         Housing:<br/>
@@ -64,7 +70,7 @@
         <br/>
         Each one currently costs <span id="smallcottageCost">150</span> metal.
         <br/>
-        <button onclick="buySmallcottage()">Small House </button>
+        <button class="smllcttg" onclick="buySmallcottage()">Small Cottage </button>
         <br/>
 
         Larger cottages (you have <span id="regcottage">0</span>) can hold 5 members of your army.
@@ -86,11 +92,8 @@
 <html>
 <div class="B2">
 <body>
-Townships!<br/>
-<br/>
-Villages: combine <span id="villageCost">10</span> small cottages to create a village!<br/>
-# of villages: <span id="village">0</span><br/>
-<button onclick="buyVillage()">Buy a village</button>
+    Your army contains <spam id="army">0</spam> warriors. <br/>
+    Capacity: <span id="total">0</span> warriors <br/>
 
    
 
@@ -101,11 +104,23 @@ Villages: combine <span id="villageCost">10</span> small cottages to create a vi
 
 <html>
 <div class="B3">
-<body>
-    This is a test because I am curious.
-<button onclick="localStorage.removeItem("save")">delete save</button>
-   
-
+<body>   
+    Townships!<br/>
+    <br/>
+    Villages: combine <span id="villageCost">10</span> small cottages to create a village!<br/>
+    # of villages: <span id="village">0</span><br/>
+    <button onclick="buyVillage()">Buy a village</button>
+<br/>
+    NEED TO DO<br/>
+    hidden buttons <br/>
+    weapons <br/>
+    armor <br/>
+    Bigger cities <br/>
+    Saving <br/>
+    Outer space <br/>
+    Breeding <br/>
+    Traps <br/>
+    Build function <br/>
 
 </body>
 </div>

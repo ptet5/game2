@@ -79,6 +79,7 @@ function buySmelter(){
         document.getElementById('smelter').innerHTML = smelter;  //updates the number of miner for the user
         document.getElementById('metal').innerHTML = metal;  //updates the number of cookies for the user
         document.getElementById('smelting').innerHTML = smelter;
+        
     };
     var nextCost = Math.floor(10 * Math.pow(1.1,smelter));       //works out the cost of the next cursor
     document.getElementById('smelterCost').innerHTML = nextCost;  //updates the cursor cost for the user
@@ -91,10 +92,34 @@ window.setInterval(function(){
 	
 }, 1000);
 
+var food = 0;
 
+function foodClick(number){
+    food = food + number;
+    document.getElementById("food").innerHTML = food;
+};
 
+var farmer = 0;
 
+function buyFarmer(){
+    var farmerCost = Math.floor(10 * Math.pow(1.1,farmer));     //works out the cost of this cursor
+    if(food >= farmerCost){                                   //checks that the player can afford the cursor
+        farmer = farmer + 1;                                   //increases number of miner
+    	food = food - farmerCost;                          //removes the cookies spent
+        document.getElementById('farmer').innerHTML = farmer;  //updates the number of miner for the user
+        document.getElementById('food').innerHTML = food;  //updates the number of cookies for the user
+        document.getElementById('farming').innerHTML = farmer;
+    };
+    var nextCost = Math.floor(10 * Math.pow(1.1,farmer));       //works out the cost of the next cursor
+    document.getElementById('farmerCost').innerHTML = nextCost;  //updates the cursor cost for the user
+};
 
+window.setInterval(function(){
+	
+    foodClick(farmer);
+
+	
+}, 1000);
 
 var army = 0;
 
@@ -170,13 +195,11 @@ function buyVillage(){
     document.getElementById('army').innerHTML = army;
 };
 
-if (Modernizr.localstorage) {
-    // window.localStorage is available!
-  } else {
-    // no native support for HTML5 storage :(
-    // maybe try dojox.storage or a third-party solution
-  }
 
+
+
+
+ 
 
 
 //future ideas:
