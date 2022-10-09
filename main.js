@@ -196,8 +196,20 @@ function buyVillage(){
 };
 
 
+if(stone >= 10) document.getElementById('myP').Element.toggleAttribute(hidden, false);
 
 
+
+//NEED TO DO<br/>
+    //hidden buttons <br/>
+    //weapons <br/>
+    //armor <br/>
+    //Bigger cities <br/>
+    //Saving <br/>
+    //Outer space <br/>
+    //Breeding <br/>
+    //Traps <br/>
+    //Build function <br/>
 
  
 
