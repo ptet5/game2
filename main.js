@@ -1,16 +1,30 @@
+//created 10/7/22
+//last updated 10/10/22
+
 var save = {
-    stone: stone,
-    miners: miner,
-    wood: wood
-}
+    stone: 0,
+    miner: 0,
+    wood: 0,
+    chopper: 0
+   };
+
+//SAVING MAKES NO SENSE WTF
+//i wanna kill myself
+
+localStorage.setItem("save",JSON.stringify(save));
+localStorage.getItem("save",JSON.stringify(save));
+
 var savegame = JSON.parse(localStorage.getItem("save"));
+
+if (typeof savegame.stone !== "undefined") stone = savegame.stone;
+
 
 var stone = 0;
 
 function stoneClick(number){
     stone = stone + number;
     document.getElementById("stone").innerHTML = stone;
-    localStorage.setItem("save",JSON.stringify(save));
+    
 
 };
 
