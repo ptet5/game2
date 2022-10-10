@@ -25,7 +25,8 @@ function buyMiner(){
 window.setInterval(function(){
 	
 	stoneClick(miner);
-
+    localStorage.setItem("stone", stone);
+    localStorage.getItem(stone)
 	
 }, 1000);
 
@@ -197,6 +198,8 @@ function buyVillage(){
 
 
 if(stone >= 10) document.getElementById('myP').Element.toggleAttribute(hidden, false);
+
+
 
 
 
