@@ -26,7 +26,7 @@ window.setInterval(function(){
 	
 	stoneClick(miner);
     localStorage.setItem("stone", stone);
-    localStorage.getItem(stone)
+    localStorage.getItem('stone')
 	
 }, 1000);
 
