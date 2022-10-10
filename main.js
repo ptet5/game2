@@ -1,9 +1,21 @@
+var save = {
+    stone: stone,
+    miners: miner,
+    wood: wood
+}
+var savegame = JSON.parse(localStorage.getItem("save"));
+
 var stone = 0;
 
 function stoneClick(number){
     stone = stone + number;
     document.getElementById("stone").innerHTML = stone;
+    localStorage.setItem("save",JSON.stringify(save));
+
 };
+
+
+
 
 var miner = 0;
 
@@ -25,8 +37,6 @@ function buyMiner(){
 window.setInterval(function(){
 	
 	stoneClick(miner);
-    localStorage.setItem("stone", stone);
-    localStorage.getItem('stone')
 	
 }, 1000);
 
