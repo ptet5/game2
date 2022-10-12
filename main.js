@@ -9,13 +9,13 @@
 
 
 var stone = 0;
-
-function stoneClick(number){
-    stone = stone + number;
-    document.getElementById("stone").innerHTML = stone;
-    
-
-};
+function stoneClick(number) {
+  stone += number;
+  document.getElementById("stone").innerHTML = "" + stone;
+  var a = JSON.parse(localStorage.getItem('save'));
+  a.stone += number;
+  localStorage.setItem('save', JSON.stringify(a));
+}
 
 
 
@@ -43,12 +43,14 @@ window.setInterval(function(){
 	
 }, 1000);
 
-var wood = 1000;
-
-function woodClick(number){
-    wood = wood + number;
-    document.getElementById("wood").innerHTML = wood;
-};
+var wood = 0;
+function woodClick(number) {
+  wood += number;
+  document.getElementById("wood").innerHTML = "" + wood;
+  var a = JSON.parse(localStorage.getItem('save'));
+  a.wood += number;
+  localStorage.setItem('save', JSON.stringify(a));
+}
 
 var chopper = 0;
 
@@ -213,18 +215,9 @@ function buyVillage(){
 if(stone >= 10) document.getElementById('myP').Element.toggleAttribute(hidden, false);
 
 
-var save = {
-wood: wood,
-stone: stone,
-food: food,
-metal: metal
-    }
-    
-localStorage.setItem("save",JSON.stringify(save));
-    
-var savegame = JSON.parse(localStorage.getItem("save"));
-
-if (typeof savegame.save !== "undefined") save = savegame.save;
+if(localStorage.getItem("save") != null) localStorage.removeItem("save");
+localStorage.setItem("save", JSON.stringify(save));
+let savegame = JSON.parse(localStorage.getItem("save"));
 
 
 
