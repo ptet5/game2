@@ -1,22 +1,11 @@
 //created 10/7/22
 //last updated 10/10/22
 
-var save = {
-    stone: 0,
-    miner: 0,
-    wood: 0,
-    chopper: 0
-   };
 
-//SAVING MAKES NO SENSE WTF
+   //SAVING MAKES NO SENSE WTF
 //i wanna kill myself
 
-localStorage.setItem("save",JSON.stringify(save));
-localStorage.getItem("save",JSON.stringify(save));
 
-var savegame = JSON.parse(localStorage.getItem("save"));
-
-if (typeof savegame.stone !== "undefined") stone = savegame.stone;
 
 
 var stone = 0;
@@ -224,6 +213,18 @@ function buyVillage(){
 if(stone >= 10) document.getElementById('myP').Element.toggleAttribute(hidden, false);
 
 
+var save = {
+wood: wood,
+stone: stone,
+food: food,
+metal: metal
+    }
+    
+localStorage.setItem("save",JSON.stringify(save));
+    
+var savegame = JSON.parse(localStorage.getItem("save"));
+
+if (typeof savegame.save !== "undefined") save = savegame.save;
 
 
 
