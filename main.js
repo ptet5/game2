@@ -7,7 +7,6 @@
 
 
 //this works in counting but doesn't save
-
 var stone = 0;
 function stoneClick(number) {
   stone += number;
@@ -19,12 +18,7 @@ function stoneClick(number) {
 
 
 //this works in saving but is counting up and breaks the miner
-function stoneClick(number) {
-    var stone = Number(window.localStorage.getItem("stone"));
-    stone += 1;
-    window.localStorage.setItem("stone", stone);
-    document.getElementById("stone").innerHTML = stone;
-}
+
 
 
 var miner = 0;
