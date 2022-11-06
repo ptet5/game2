@@ -8,17 +8,12 @@
 
 //this works in counting but doesn't save
 var stone = 0;
-function stoneClick(number) {
-  stone += number;
-  document.getElementById("stone").innerHTML = "" + stone;
-  var a = JSON.parse(localStorage.getItem('save'));
-  a.stone += number;
-  localStorage.setItem('save', JSON.stringify(a));
-}
 
-
-//this works in saving but is counting up and breaks the miner
-
+function stoneClick(number){
+stone = stone + number;
+document.getElementById("stone").innerHTML = stone;
+};
+        
 
 
 var miner = 0;
@@ -213,12 +208,7 @@ function buyVillage(){
 };
 
 
-if(stone >= 10) document.getElementById('myP').Element.toggleAttribute(hidden, false);
 
-
-if(localStorage.getItem("save") != null) localStorage.removeItem("save");
-localStorage.setItem("save", JSON.stringify(save));
-let savegame = JSON.parse(localStorage.getItem("save"));
 
 
 
@@ -242,3 +232,4 @@ let savegame = JSON.parse(localStorage.getItem("save"));
 //Strenghth/attack bar
 //some sort of battle element
 //space
+}
