@@ -5,7 +5,16 @@
    //SAVING MAKES NO SENSE WTF
 //i wanna kill myself
 
+public class VariablesAndNames
+{
+        int stone,wood,metal,miner;
 
+        stone = 100;
+        metal = 4.0;
+        miner = 30;
+        metal = 90;
+    
+}
 //this works in counting but doesn't save
 var stone = 0;
 
