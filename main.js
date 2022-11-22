@@ -19,7 +19,7 @@ function stoneClick(number) {
 var miner = 0;
 
 function buyMiner(){
-    var minerCost = Math.floor(10 * Math.pow(1.1,miner));     //works out the cost of this cursor
+    var minerCost = Math.floor(10 * Math.pow(1.05,miner));     //works out the cost of this cursor
     if(stone >= minerCost){                      //checks that the player can afford the cursor
         miner = miner + 1;                                   //increases number of miner
     	stone = stone - minerCost;                          //removes the cookies spent
@@ -29,7 +29,7 @@ function buyMiner(){
         window.localStorage.setItem("miner", miner);
         document.getElementById("miner").innerHTML = miner;
     };
-    var nextCost = Math.floor(10 * Math.pow(1.1,miner));       //works out the cost of the next cursor
+    var nextCost = Math.floor(10 * Math.pow(1.05,miner));       //works out the cost of the next cursor
     document.getElementById('minerCost').innerHTML = nextCost;  //updates the cursor cost for the user
     
 };
@@ -40,14 +40,7 @@ window.setInterval(function(){
 	
 }, 1000);
 
-var wood = 0;
-function woodClick(number) {
-  wood += number;
-  document.getElementById("wood").innerHTML = "" + wood;
-  var a = JSON.parse(localStorage.getItem('save'));
-  a.wood += number;
-  localStorage.setItem('save', JSON.stringify(a));
-}
+
 
 var wood = Number(window.localStorage.getItem("wood"));    
 
@@ -82,18 +75,18 @@ window.setInterval(function(){
 }, 1000);
 
 
+var metal = Number(window.localStorage.getItem("metal"));    
 
-var metal = 1000000;
-
-function metalClick(number){
+function metalClick(number) {
     metal = metal + number;
+    window.localStorage.setItem("metal", metal);
     document.getElementById("metal").innerHTML = metal;
-};
+}
 
 var smelter = 0;
 
 function buySmelter(){
-    var smelterCost = Math.floor(10 * Math.pow(1.001,smelter));     //works out the cost of this cursor
+    var smelterCost = Math.floor(10 * Math.pow(1.05,smelter));     //works out the cost of this cursor
     if(metal >= smelterCost){                                   //checks that the player can afford the cursor
         smelter = smelter + 1;                                   //increases number of miner
     	metal = metal - smelterCost;                          //removes the cookies spent
@@ -102,7 +95,7 @@ function buySmelter(){
         document.getElementById('smelting').innerHTML = smelter;
         
     };
-    var nextCost = Math.floor(10 * Math.pow(1.1,smelter));       //works out the cost of the next cursor
+    var nextCost = Math.floor(10 * Math.pow(1.05,smelter));       //works out the cost of the next cursor
     document.getElementById('smelterCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
 
@@ -113,17 +106,18 @@ window.setInterval(function(){
 	
 }, 1000);
 
-var food = 0;
+var food = Number(window.localStorage.getItem("food"));    
 
-function foodClick(number){
+function foodClick(number) {
     food = food + number;
+    window.localStorage.setItem("food", food);
     document.getElementById("food").innerHTML = food;
-};
+}
 
 var farmer = 0;
 
 function buyFarmer(){
-    var farmerCost = Math.floor(10 * Math.pow(1.1,farmer));     //works out the cost of this cursor
+    var farmerCost = Math.floor(10 * Math.pow(1.05,farmer));     //works out the cost of this cursor
     if(food >= farmerCost){                                   //checks that the player can afford the cursor
         farmer = farmer + 1;                                   //increases number of miner
     	food = food - farmerCost;                          //removes the cookies spent
@@ -131,7 +125,7 @@ function buyFarmer(){
         document.getElementById('food').innerHTML = food;  //updates the number of cookies for the user
         document.getElementById('farming').innerHTML = farmer;
     };
-    var nextCost = Math.floor(10 * Math.pow(1.1,farmer));       //works out the cost of the next cursor
+    var nextCost = Math.floor(10 * Math.pow(1.05,farmer));       //works out the cost of the next cursor
     document.getElementById('farmerCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
 
@@ -151,7 +145,7 @@ var smallcottage = 0;
 
 
 function buySmallcottage(){
-    var smallcottageCost = Math.floor(150 * Math.pow(1.01,smallcottage));     //works out the cost of this cursor
+    var smallcottageCost = Math.floor(150 * Math.pow(1.05,smallcottage));     //works out the cost of this cursor
     if(metal >= smallcottageCost){                                   //checks that the player can afford the cursor
         smallcottage = smallcottage + 1;                                   //increases number of miner
     	metal = metal - smallcottageCost;                          //removes the cookies spent
@@ -159,7 +153,7 @@ function buySmallcottage(){
         document.getElementById('metal').innerHTML = metal;  //updates the number of cookies for the user
         document.getElementById('army').innerHTML = smallcottage;
     };
-    var nextCost = Math.floor(150 * Math.pow(1.01,(smallcottage + (10 * village))));       //works out the cost of the next cursor
+    var nextCost = Math.floor(150 * Math.pow(1.05,(smallcottage + (10 * village))));       //works out the cost of the next cursor
     document.getElementById('smallcottageCost').innerHTML = nextCost;  //updates the cursor cost for the user
     var army = Math.floor((15 * village) + (100 * apartment) + (5 * regcottage) + smallcottage)
     document.getElementById('army').innerHTML = army;
@@ -169,14 +163,14 @@ function buySmallcottage(){
 var regcottage = 0;
 
 function buyRegcottage(){
-    var regcottageCost = Math.floor(400 * Math.pow(1.01,regcottage));     //works out the cost of this cursor
+    var regcottageCost = Math.floor(400 * Math.pow(1.015,regcottage));     //works out the cost of this cursor
     if(metal >= regcottageCost){                                   //checks that the player can afford the cursor
         regcottage = regcottage + 1;                                   //increases number of miner
     	metal = metal - regcottageCost;                          //removes the cookies spent
         document.getElementById('regcottage').innerHTML = regcottage;  //updates the number of miner for the user
         document.getElementById('metal').innerHTML = metal;  //updates the number of cookies for the user
     };
-    var nextCost = Math.floor(400 * Math.pow(1.01,regcottage));       //works out the cost of the next cursor
+    var nextCost = Math.floor(400 * Math.pow(1.05,regcottage));       //works out the cost of the next cursor
     document.getElementById('regcottageCost').innerHTML = nextCost;  //updates the cursor cost for the user
     var army = Math.floor((15 * village) + (100 * apartment) + (5 * regcottage) + smallcottage)
     document.getElementById('army').innerHTML = army;
@@ -185,7 +179,7 @@ function buyRegcottage(){
 var apartment = 0;
 
 function buyApartment(){
-    var apartmentCost = Math.floor(1000 * Math.pow(1.1,apartment));     //works out the cost of this cursor
+    var apartmentCost = Math.floor(1000 * Math.pow(1.05,apartment));     //works out the cost of this cursor
     if(metal >= apartmentCost && wood >= apartmentCost){                                   //checks that the player can afford the cursor
         apartment = apartment + 1;                                   //increases number of miner
     	metal = metal - apartmentCost;                          //removes the cookies spent
@@ -194,7 +188,7 @@ function buyApartment(){
         document.getElementById('metal').innerHTML = metal;  //updates the number of cookies for the user
         document.getElementById('wood').innerHTML = wood;
     };
-    var nextCost = Math.floor(1000 * Math.pow(1.1,apartment));       //works out the cost of the next cursor
+    var nextCost = Math.floor(1000 * Math.pow(1.05,apartment));       //works out the cost of the next cursor
     document.getElementById('apartmentCost').innerHTML = nextCost;  //updates the cursor cost for the user
     var army = Math.floor((15 * village) + (100 * apartment) + (5 * regcottage) + smallcottage)
     document.getElementById('army').innerHTML = army;
