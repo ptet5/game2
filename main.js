@@ -5,24 +5,15 @@
    //SAVING MAKES NO SENSE WTF
 //i wanna kill myself
 
-public class VariablesAndNames
-{
-        int stone,wood,metal,miner;
 
-        stone = 100;
-        metal = 4.0;
-        miner = 30;
-        metal = 90;
-    
-}
 //this works in counting but doesn't save
-var stone = 0;
+var stone = Number(window.localStorage.getItem("stone"));    
 
-function stoneClick(number){
-stone = stone + number;
-document.getElementById("stone").innerHTML = stone;
-};
-        
+function stoneClick(number) {
+    stone = stone + number;
+    window.localStorage.setItem("stone", stone);
+    document.getElementById("stone").innerHTML = stone;
+}
 
 
 var miner = 0;
@@ -32,14 +23,15 @@ function buyMiner(){
     if(stone >= minerCost){                      //checks that the player can afford the cursor
         miner = miner + 1;                                   //increases number of miner
     	stone = stone - minerCost;                          //removes the cookies spent
-        army = army - 1;
-        document.getElementById('Miner').innerHTML = miner;  //updates the number of miner for the user
+        document.getElementById('miner').innerHTML = miner;  //updates the number of miner for the user
         document.getElementById('stone').innerHTML = stone;  //updates the number of cookies for the user
         document.getElementById('mining').innerHTML = miner;
-
+        window.localStorage.setItem("miner", miner);
+        document.getElementById("miner").innerHTML = miner;
     };
     var nextCost = Math.floor(10 * Math.pow(1.1,miner));       //works out the cost of the next cursor
     document.getElementById('minerCost').innerHTML = nextCost;  //updates the cursor cost for the user
+    
 };
 
 window.setInterval(function(){
@@ -55,6 +47,14 @@ function woodClick(number) {
   var a = JSON.parse(localStorage.getItem('save'));
   a.wood += number;
   localStorage.setItem('save', JSON.stringify(a));
+}
+
+var wood = Number(window.localStorage.getItem("wood"));    
+
+function woodClick(number) {
+    wood = wood + number;
+    window.localStorage.setItem("wood", wood);
+    document.getElementById("wood").innerHTML = wood;
 }
 
 var chopper = 0;
@@ -241,4 +241,4 @@ function buyVillage(){
 //Strenghth/attack bar
 //some sort of battle element
 //space
-}
+
