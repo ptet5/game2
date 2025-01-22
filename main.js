@@ -16,7 +16,7 @@ function stoneClick(number) {
 }
 
 
-var miner = 0;
+var miner = Number(window.localStorage.getItem("miner"));
 
 function buyMiner(){
     var minerCost = Math.floor(10 * Math.pow(1.05,miner));     //works out the cost of this cursor
